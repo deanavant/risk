@@ -1,26 +1,34 @@
 {   
-    "Territories": [
+    "Continents": [
         {
-            "North America": [
+            "Name": "North America",
+            "Territories": [
                 "Alaska", "Alberta", "Central America", "Eastern United States", "Greenland",
                 "Northwest Territory", "Ontario", "Quebec", "Western United States"
-            ] 
+            ],
+            "Value": 5 
         },
         { 
-            "South America": [
+            "Name": "South America",
+            "Territories": [
                 "Argentina", "Brazil", "Peru", "Venezuela"
-        ] 
+            ],
+            "Value": 2 
         },
         { 
-            "Europe": [
+            "Name": "Europe",
+            "Territories": [
                 "Great Britain", "Iceland", "Northern Europe", "Scandinavia", "Southern Europe",
                 "Ukraine", "Western Europe"
-        ] 
+            ],
+            "Value": 5 
         },
         {
-            "Africa": [
+            "Name": "Africa",
+            "Territories": [
                 "Congo", "East Africa", "Egypt", "Madagascar", "North Africa", "South Africa"
-            ]
+            ],
+            "Value": 3
         },
         {
             "Asia": [
@@ -29,9 +37,11 @@
             ]
         },
         {
-            "Oceania": [
+            "Name": "Oceania",
+            "Territories":  [
                 "Eastern Austrialia", "Indonesia", "New Guinea", "Western Australia"
-            ]
+            ],
+            "Value": 2
         }
     ]
 }
