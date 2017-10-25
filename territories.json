@@ -1,9 +1,18 @@
 {
+
     "Eastern Austrialia": {
         "Neighbors": ["New Guinea", "Western Australia"],
         "TopLeftX": 960,
         "TopLeftY": 584,
-        "BottomLeftX": 1040,
-        "BottomLeftY": 622
+        "BottomRightX": 1040,
+        "BottomRightY": 622
+    },
+    "Western Austrialia": {
+        "Neighbors": ["New Guinea", "Eastern Australia", "Indonesia"],
+        "TopLeftX": 874,
+        "TopLeftY": 612,
+        "BottomRightX": 980,
+        "BottomRightY": 654
     }
+   
 }
