@@ -22,5 +22,49 @@ namespace risk.Models
         
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime updated_at { get; set; }
+
+        [NotMapped]
+        public List<Territory> neighbors { get; set; }
+
+        [NotMapped]
+        public int armies { get; set; }
+
+        public Territory()
+        {
+            neighbors = new List<Territory>();
+            armies = 0;
+        }
+
+        public bool addNeighbor(Territory n)
+        {
+            if (neighbors.Contains(n) )
+            {
+                return false;
+            }
+            neighbors.Add(n);
+            return true;
+        }
+
+        public bool isNeighbor(Territory n)
+        {
+            return neighbors.Contains(n);
+        }
+
+        public bool isFoe(Territory n)
+        {
+            return owner != n.owner;
+        }
+
+        public bool addArmies(Player p, int armies = 1)
+        {
+            if(armies == 0)
+            {
+                owner = p;
+                this.armies = armies;
+                // need a route-controller call to update context?
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -44,16 +44,21 @@ namespace risk.Models
             return rand.Next(sides);
         }
 
-        public bool AttackTerritory(string attacker, string foe)
+        public bool AttackTerritory(Territory attacker, Territory foe, int dice = 2)
         {
-            // attacker and foe are territory names
+            // attacker and foe are territories
+            if (attacker.isNeighbor(foe) && attacker.isFoe(foe) && attacker.armies > 1)
+            {
+                // do the attack here
+                return true;
+            }
             // foe must be a neighbor of attacker
             // attacker must belong to current player
             // attacker army count must be >= 2
             // foe must not belong to current player
+            // defender uses 2 dice unless they have 1 army
 
             return false;
         }
-
     }
 }

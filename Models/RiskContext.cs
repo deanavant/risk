@@ -9,7 +9,5 @@ namespace risk.Models
         public DbSet<Player> player { get; set;}
         public DbSet<Territory> territory { get; set;}
         public DbSet<Game> game { get; set;}
-
-
     }
 }
