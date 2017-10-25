@@ -28,7 +28,7 @@ namespace risk.Models
         {
             foreach(Territory t in territories)
             {
-                if(t.owner.Id != pid)
+                if(t.owner.id != pid)
                 {
                     return false;
                 }
