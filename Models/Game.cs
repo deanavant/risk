@@ -5,6 +5,8 @@ namespace risk.Models
 {
     public class Game
     {
+        private Random rand;
+
         public int Id { get; set; }
         public string State { get; set; }
         public List<Territory> territories { get; set; }
@@ -13,6 +15,12 @@ namespace risk.Models
         public Game()
         {
             territories = new List<Territory>();
+            rand = new Random();
+        }
+
+        public int DieRoll(int sides = 6)
+        {
+            return rand.Next(sides);
         }
 
     }
