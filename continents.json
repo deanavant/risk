@@ -4,43 +4,40 @@
             "Name": "North America",
             "Territories": [
                 "Alaska", "Alberta", "Central America", "Eastern United States", "Greenland",
-                "Northwest Territory", "Ontario", "Quebec", "Western United States"
-            ],
+                "Northwest Territory", "Ontario", "Quebec", "Western United States" ],
             "Value": 5 
         },
         { 
             "Name": "South America",
             "Territories": [
-                "Argentina", "Brazil", "Peru", "Venezuela"
-            ],
+                "Argentina", "Brazil", "Peru", "Venezuela" ],
             "Value": 2 
         },
         { 
             "Name": "Europe",
             "Territories": [
                 "Great Britain", "Iceland", "Northern Europe", "Scandinavia", "Southern Europe",
-                "Ukraine", "Western Europe"
-            ],
+                "Ukraine", "Western Europe" ],
             "Value": 5 
         },
         {
             "Name": "Africa",
             "Territories": [
-                "Congo", "East Africa", "Egypt", "Madagascar", "North Africa", "South Africa"
-            ],
+                "Congo", "East Africa", "Egypt", "Madagascar", "North Africa",
+                "South Africa" ],
             "Value": 3
         },
         {
-            "Asia": [
+            "Name": "Asia",
+            "Territories": [
                 "Afghanistan", "China", "India", "Irkutsk", "Japan", "Kamchatka",
-                "Middle East", "Mongolia", "Siam", "Siberia", "Ural", "Yakutsk"
-            ]
+                "Middle East", "Mongolia", "Siam", "Siberia", "Ural", "Yakutsk" ],
+            "Value": 7
         },
         {
-            "Name": "Oceania",
+            "Name": "Australia",
             "Territories":  [
-                "Eastern Austrialia", "Indonesia", "New Guinea", "Western Australia"
-            ],
+                "Eastern Austrialia", "Indonesia", "New Guinea", "Western Australia" ],
             "Value": 2
         }
     ]

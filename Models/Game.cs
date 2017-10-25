@@ -44,5 +44,16 @@ namespace risk.Models
             return rand.Next(sides);
         }
 
+        public bool AttackTerritory(string attacker, string foe)
+        {
+            // attacker and foe are territory names
+            // foe must be a neighbor of attacker
+            // attacker must belong to current player
+            // attacker army count must be >= 2
+            // foe must not belong to current player
+
+            return false;
+        }
+
     }
 }
