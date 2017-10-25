@@ -1,44 +1,36 @@
 {   
-    "Continents": [
-        {
-            "Name": "North America",
-            "Territories": [
-                "Alaska", "Alberta", "Central America", "Eastern United States", "Greenland",
-                "Northwest Territory", "Ontario", "Quebec", "Western United States" ],
-            "Value": 5 
-        },
-        { 
-            "Name": "South America",
-            "Territories": [
-                "Argentina", "Brazil", "Peru", "Venezuela" ],
-            "Value": 2 
-        },
-        { 
-            "Name": "Europe",
-            "Territories": [
-                "Great Britain", "Iceland", "Northern Europe", "Scandinavia", "Southern Europe",
-                "Ukraine", "Western Europe" ],
-            "Value": 5 
-        },
-        {
-            "Name": "Africa",
-            "Territories": [
-                "Congo", "East Africa", "Egypt", "Madagascar", "North Africa",
-                "South Africa" ],
-            "Value": 3
-        },
-        {
-            "Name": "Asia",
-            "Territories": [
-                "Afghanistan", "China", "India", "Irkutsk", "Japan", "Kamchatka",
-                "Middle East", "Mongolia", "Siam", "Siberia", "Ural", "Yakutsk" ],
-            "Value": 7
-        },
-        {
-            "Name": "Australia",
-            "Territories":  [
-                "Eastern Austrialia", "Indonesia", "New Guinea", "Western Australia" ],
-            "Value": 2
-        }
-    ]
+    "North America": {
+        "Territories": [
+            "Alaska", "Alberta", "Central America", "Eastern United States", "Greenland",
+            "Northwest Territory", "Ontario", "Quebec", "Western United States" ],
+        "Value": 5 
+    },
+    "South America": {
+        "Territories": [
+            "Argentina", "Brazil", "Peru", "Venezuela" ],
+        "Value": 2 
+    },
+    "Europe": {
+        "Territories": [
+            "Great Britain", "Iceland", "Northern Europe", "Scandinavia", "Southern Europe",
+            "Ukraine", "Western Europe" ],
+        "Value": 5 
+    },
+    "Africa": {
+        "Territories": [
+            "Congo", "East Africa", "Egypt", "Madagascar", "North Africa",
+            "South Africa" ],
+        "Value": 3
+    },
+    "Asia": {
+        "Territories": [
+            "Afghanistan", "China", "India", "Irkutsk", "Japan", "Kamchatka",
+            "Middle East", "Mongolia", "Siam", "Siberia", "Ural", "Yakutsk" ],
+        "Value": 7
+    },
+    "Australia": {
+        "Territories":  [
+            "Eastern Austrialia", "Indonesia", "New Guinea", "Western Australia" ],
+        "Value": 2
+    }
 }
