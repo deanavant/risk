@@ -13,6 +13,76 @@
         "TopLeftY": 612,
         "BottomRightX": 980,
         "BottomRightY": 654
-    }
+    },
+    "Indonesia": {
+        "Neighbors": ["New Guinea", "Western Australia", "Slam"],
+        "TopLeftX": 823,
+        "TopLeftY": 515,
+        "BottomRightX": 920,
+        "BottomRightY": 544
+    },
+    "Slam": {
+        "Neighbors": ["Indonesia", "China", "India"],
+        "TopLeftX": 835,
+        "TopLeftY": 391,
+        "BottomRightX": 890,
+        "BottomRightY": 421
+    },
+    "China": {
+        "Neighbors": ["Ural", "Afghanistan", "India","Slam","Siberia","Mongolia"],
+        "TopLeftX": 780,
+        "TopLeftY": 291,
+        "BottomRightX": 890,
+        "BottomRightY": 340
+    },
+    "India": {
+        "Neighbors": ["Slam","China","Afghanistan","Middle East"],
+        "TopLeftX": 740,
+        "TopLeftY": 356,
+        "BottomRightX": 812,
+        "BottomRightY": 386
+    },
+    "Mongolia": {
+        "Neighbors": ["Japan","Kamchatka","Irkutsk","Siberia","China"],
+        "TopLeftX": 830,
+        "TopLeftY": 229,
+        "BottomRightX": 910,
+        "BottomRightY": 260
+    },
+    "Japan": {
+        "Neighbors": ["Mongolia","Kamchatka"],
+        "TopLeftX": 956,
+        "TopLeftY": 240,
+        "BottomRightX": 1010,
+        "BottomRightY": 268
+    },
+    "Kamchatka": {
+        "Neighbors": ["Japan","Yakutsk","Irkutsk","Mongolia","Alaska"],
+        "TopLeftX": 923,
+        "TopLeftY": 62,
+        "BottomRightX": 1004,
+        "BottomRightY": 97
+    },
+    "Yakutsk": {
+        "Neighbors": ["Kamchatka","Siberia","Irkutsk"],
+        "TopLeftX": 848,
+        "TopLeftY": 65,
+        "BottomRightX": 907,
+        "BottomRightY": 92
+    },
+    "Irkutsk": {
+        "Neighbors": ["Kamchatka","Siberia","Yakutsk","Mongolia"],
+        "TopLeftX": 837,
+        "TopLeftY": 147,
+        "BottomRightX": 888,
+        "BottomRightY": 185
+    },
+    "Siberia": {
+        "Neighbors": ["Mongolia","Irkutsk","Yakutsk","China","Ural"],
+        "TopLeftX": 750,
+        "TopLeftY": 87,
+        "BottomRightX": 827,
+        "BottomRightY": 127
+    },
    
 }
