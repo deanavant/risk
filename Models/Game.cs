@@ -47,7 +47,7 @@ namespace risk.Models
         public bool AttackTerritory(Territory attacker, Territory foe, int dice = 2)
         {
             // attacker and foe are territories
-            if (attacker.isNeighbor(foe) && attacker.isFoe(foe) && attacker.armies > 1)
+            if (attacker.IsNeighbor(foe) && attacker.IsFoe(foe) && attacker.armies > 1)
             {
                 // do the attack here
                 return true;

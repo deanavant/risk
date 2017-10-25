@@ -35,7 +35,7 @@ namespace risk.Models
             armies = 0;
         }
 
-        public bool addNeighbor(Territory n)
+        public bool AddNeighbor(Territory n)
         {
             if (neighbors.Contains(n) )
             {
@@ -45,17 +45,17 @@ namespace risk.Models
             return true;
         }
 
-        public bool isNeighbor(Territory n)
+        public bool IsNeighbor(Territory n)
         {
             return neighbors.Contains(n);
         }
 
-        public bool isFoe(Territory n)
+        public bool IsFoe(Territory n)
         {
             return owner != n.owner;
         }
 
-        public bool addArmies(Player p, int armies = 1)
+        public bool AddArmies(Player p, int armies = 1)
         {
             if(armies == 0)
             {

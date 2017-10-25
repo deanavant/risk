@@ -6,16 +6,34 @@ namespace risk.Models
     public class Continent
     {
         public List<Territory> territories;
+        public string name { get; set; }
+        public int value { get; set; }
 
         public Continent()
         {
-            // need to gather xml data here and add territories, etc
+            territories = new List<Territory>();
         }
 
-        public bool hasContinent(int pid)
+        public bool AddTerritory(Territory t)
         {
-            // see if given player owns all territories on this continent
-            return false;
+            if (territories.Contains(t) )
+            {
+                return false;
+            }
+            territories.Add(t);
+            return true;
+        }
+
+        public bool OwnedBy(int pid)
+        {
+            foreach(Territory t in territories)
+            {
+                if(t.owner.Id != pid)
+                {
+                    return false;
+                }
+            }
+            return true;   
         }
     }
 }
