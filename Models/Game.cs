@@ -5,7 +5,7 @@ namespace risk.Models
 {
     public class Game
     {
-        private Random rand;
+        private static Random rand;
 
         public int Id { get; set; }
         public string State { get; set; }
@@ -18,7 +18,7 @@ namespace risk.Models
             rand = new Random();
         }
 
-        public int DieRoll(int sides = 6)
+        public static int DieRoll(int sides = 6)
         {
             return rand.Next(sides);
         }
