@@ -165,10 +165,6 @@ namespace risk.Models
                     attacker.armies--;
                     foe.owner = attacker.owner;
                 }
-                if (foe.armies == 0 && attacker.armies < 2)
-                {
-                    foe.owner = null;
-                }
                 return true;
             }
             
