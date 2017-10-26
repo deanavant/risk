@@ -37,13 +37,14 @@ namespace risk.Models
             order_number = order;
             placement_units = units;
         }
-         public static List<Player> createPlayers(int num_players)
+
+        public static List<Player> createPlayers(int num_players)
         {
             Player player;
             List<Player> players = new List<Player>();
             String[] arr = new String[]{"Red","Blue","Yellow","Green","Black","Orange"};
             var unit = 50;
-             if (num_players == 3)
+            if (num_players == 3)
             {
                 unit = 35;
             } else if (num_players == 4)
@@ -67,7 +68,7 @@ namespace risk.Models
             }
 
             return players;
-            }
         }
-       
     }
+       
+}

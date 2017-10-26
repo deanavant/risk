@@ -121,7 +121,7 @@ namespace risk.Models
             return rand.Next(sides);
         }
 
-        public bool AttackTerritory(Territory attacker, Territory foe, int dice = 2)
+        public bool AttackTerritory(Territory attacker, Territory foe)
         {
             // attacker and foe are territories
             if (attacker.IsNeighbor(foe) 
@@ -130,6 +130,7 @@ namespace risk.Models
                 && foe.armies > 0)
             {
                 // do the attack here
+                int dice = attacker.armies > 2 ? 3 : 2;
                 int[] atk = new int[dice];
                 for(int i = 0;i < dice;i++)
                 {
@@ -145,6 +146,25 @@ namespace risk.Models
                 }
                 Array.Sort(def);
                 Array.Reverse(def);
+                int aloss = 0;
+                int dloss = 0;
+                for (int i = 0;i < def.Length;i++)
+                {
+                    if(atk[i] > def[i])
+                    {
+                        dloss++;
+                    } else
+                    {
+                        aloss++;
+                    }
+                }
+                attacker.armies -= aloss;
+                foe.armies -= dloss;
+                if (foe.armies == 0 && attacker.armies >= 2)
+                {
+                    attacker.armies--;
+                    foe.owner = attacker.owner;
+                }
                 return true;
             }
             
