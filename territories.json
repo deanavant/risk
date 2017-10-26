@@ -149,149 +149,149 @@
     },
     "Ukraine": {
         "Neighbors": ["Ural","Afghanistan","Middle East","Southern Europe","Northern Europe","Scandinavia"],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "TopLeftX":584,
+        "TopLeftY":155,
+        "BottomRightX":675,
+        "BottomRightY":194
     }, 
     "Scandinavia": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Ukraine","Northern Europe","Great Britain","Iceland"],
+        "TopLeftX":488,
+        "TopLeftY":79,
+        "BottomRightX":570,
+        "BottomRightY":168
     }, 
     "Northern Europe": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Ukraine","Scandinavia","Great Britain","Western Europe","Southern Europe"],
+        "TopLeftX":484,
+        "TopLeftY":213,
+        "BottomRightX":560,
+        "BottomRightY":260
     }, 
     "Southern Europe": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Ukraine","Northern Europe","Western Europe","North Africa","Egypt","Middle East"],
+        "TopLeftX":493,
+        "TopLeftY":277,
+        "BottomRightX":574,
+        "BottomRightY":321
     }, 
     "Western Europe": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Southern Europe","Northern Europe","Great Britain","North Africa"],
+        "TopLeftX":411,
+        "TopLeftY":270,
+        "BottomRightX":483,
+        "BottomRightY":363
     }, 
     "Great Britain": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Western Europe","Northern Europe","Scandinavia","Iceland"],
+        "TopLeftX":360,
+        "TopLeftY":196,
+        "BottomRightX":478,
+        "BottomRightY":238
     }, 
     "Iceland": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Great Britain","Scandinavia","Greenland"],
+        "TopLeftX":416,
+        "TopLeftY":118,
+        "BottomRightX":477,
+        "BottomRightY":151
     }, 
     "Greenland": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Iceland","North West Territory","Ontario","Quebec"],
+        "TopLeftX":309,
+        "TopLeftY":45,
+        "BottomRightX":411,
+        "BottomRightY":83
     }, 
     "Quebec": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Greenland","Ontario","Eastern United States"],
+        "TopLeftX":263,
+        "TopLeftY":165,
+        "BottomRightX":328,
+        "BottomRightY":193
     }, 
     "Eastern United States": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Quebec","Ontario","Western United States","Central America"],
+        "TopLeftX":184,
+        "TopLeftY":254,
+        "BottomRightX":270,
+        "BottomRightY":294
     }, 
     "Ontario": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Quebec","Greenland","North West Territory","Alberta","Western United States","Eastern United States"],
+        "TopLeftX":188,
+        "TopLeftY":166,
+        "BottomRightX":251,
+        "BottomRightY":191
     }, 
     "North West Territory": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Alaska","Alberta","Ontario","Greenland"],
+        "TopLeftX":93,
+        "TopLeftY":83,
+        "BottomRightX":249,
+        "BottomRightY":115
     }, 
     "Alberta": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Ontario","North West Territory","Alaska","Western United States"],
+        "TopLeftX":115,
+        "TopLeftY":147,
+        "BottomRightX":186,
+        "BottomRightY":177
     }, 
     "Western United States": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Eastern United States","Ontario","Alberta","Central America"],
+        "TopLeftX":114,
+        "TopLeftY":219,
+        "BottomRightX":200,
+        "BottomRightY":256
     }, 
     "Central America": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Venezuela","Eastern United States","Western United States"],
+        "TopLeftX":133,
+        "TopLeftY":291,
+        "BottomRightX":196,
+        "BottomRightY":385
     }, 
     "Alaska": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Kamchatka","North West Territory","Alberta"],
+        "TopLeftX":28,
+        "TopLeftY":96,
+        "BottomRightX":89,
+        "BottomRightY":117
     }, 
     "Venezuela": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Central America","Peru","Brazil"],
+        "TopLeftX":200,
+        "TopLeftY":392,
+        "BottomRightX":280,
+        "BottomRightY":418
     }, 
     "Brazil": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["North Africa","Venezuela","Peru","Argentina"],
+        "TopLeftX":273,
+        "TopLeftY":451,
+        "BottomRightX":350,
+        "BottomRightY":487
     }, 
     "Peru": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Brazil","Venezuela","Argentina"],
+        "TopLeftX":237,
+        "TopLeftY":490,
+        "BottomRightX":288,
+        "BottomRightY":522
     }, 
     "Argentina": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["Brazil","Peru"],
+        "TopLeftX":231,
+        "TopLeftY":566,
+        "BottomRightX":307,
+        "BottomRightY":595
     }, 
     "Madagascar": {
-        "Neighbors": [],
-        "TopLeftX":0,
-        "TopLeftY":0,
-        "BottomRightX":0,
-        "BottomRightY":0
+        "Neighbors": ["South Africa","East Africa"],
+        "TopLeftX":650,
+        "TopLeftY":595,
+        "BottomRightX":700,
+        "BottomRightY":677
     } 
 }

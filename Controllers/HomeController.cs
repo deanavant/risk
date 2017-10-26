@@ -21,6 +21,10 @@ namespace risk.Controllers
         [Route("")]
         public IActionResult Index()
         {
+            Game myGame = new Game();
+            Console.Write(myGame.territories["Peru"].name);
+            
+            Console.WriteLine(myGame.territories["Peru"].bottomRightX);
             return View("index");
         }
     }
