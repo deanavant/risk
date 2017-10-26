@@ -24,10 +24,19 @@ namespace risk.Models
         public DateTime updated_at { get; set; }
 
         [NotMapped]
-
         public int topLeftX { get; set; }
 
+        [NotMapped]
+        public int topLeftY { get; set; }
 
+        [NotMapped]
+        public int bottomRightX { get; set; }
+
+        [NotMapped]
+        public int bottomRightY { get; set; }
+
+        [NotMapped]
+        public List<Territory> neighbors { get; set; }
 
     }
 }
