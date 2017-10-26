@@ -31,6 +31,9 @@ namespace risk.Models
         [NotMapped]
         public List<Player> players { get; set; }
 
+        [NotMapped]
+        public Player emptyPlayer { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime created_at { get; set; }
         
@@ -39,16 +42,18 @@ namespace risk.Models
 
         public Game()
         {
+            emptyPlayer = new Player("Player7","white",7,0);
             territories = LoadTerritoriesToDictionary();
             setup_phase = true;
             turn_phase = "Place";
             rand = new Random();
+
         }
 
-        public void AddPlayer(string name, string color, int order)
-        {
-            players.Add(new Player(name,color,order));
-        }
+        // public void AddPlayer(string name, string color, int order)
+        // {
+        //     players.Add(new Player(name,color,order));
+        // }
 
         public void InitialPlacements()
         {
@@ -73,7 +78,7 @@ namespace risk.Models
             }
         }
 
-        private static Dictionary<string,Territory> LoadTerritoriesToDictionary() {
+        private Dictionary<string,Territory> LoadTerritoriesToDictionary() {
             Dictionary<string,Territory> territories = new Dictionary<string,Territory>();
 
                 using (StreamReader file = File.OpenText(@"territories.json"))
@@ -89,7 +94,7 @@ namespace risk.Models
                         
                         Territory temp = new Territory();
                         temp.name = territory.Key;
-                        temp.owner = null;
+                        temp.owner = emptyPlayer;
                         temp.topLeftX = (int)territory.Value["TopLeftX"];
                         temp.topLeftY = (int)territory.Value["TopLeftY"];
                         temp.bottomRightX = (int)territory.Value["BottomRightX"];
