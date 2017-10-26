@@ -49,6 +49,29 @@ namespace risk.Models
             players.Add(new Player(name,color,order));
         }
 
+        public void InitialPlacements()
+        {
+            int p = players.Count;
+            int armies = 50;
+            if (p == 3)
+            {
+                armies = 35;
+            } else if (p == 4)
+            {
+                armies = 30;
+            } else if (p == 5)
+            {
+                armies = 25;
+            } else if (p == 6)
+            {
+                armies = 20;
+            }
+            foreach(Player a in players)
+            {
+                a.placement_units = armies;
+            }
+        }
+
         private static Dictionary<string,Territory> LoadTerritoriesToDictionary() {
             Dictionary<string,Territory> territories = new Dictionary<string,Territory>();
 
@@ -80,7 +103,6 @@ namespace risk.Models
                         foreach(var name in territory.Value["Neighbors"]) {
                             Console.WriteLine((string)name);
                             tempList.Add(territories[(string)name]);
-                            // territories[territory.Key].AddNeighbor(territories[name]);
                         }
                         territories[territory.Key].neighbors = tempList;
                     }      

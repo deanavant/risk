@@ -47,16 +47,6 @@ namespace risk.Models
             armies = 0;
         }
 
-        // public bool AddNeighbor(Territory n)
-        // {
-        //     if(!neighbors.Contains(n) )
-        //     {
-        //         neighbors.Add(n);
-        //         return true;
-        //     }
-        //     return false;
-        // }
-
         public bool IsNeighbor(Territory n)
         {
             return neighbors.Contains(n);
