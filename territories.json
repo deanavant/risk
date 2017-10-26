@@ -155,98 +155,98 @@
         "BottomRightY":0
     }, 
     "Scandinavia": {
-        "Neighbors": [],
+        "Neighbors": ["Ukraine","Northern Europe","Great Britain","Iceland"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Northern Europe": {
-        "Neighbors": [],
+        "Neighbors": ["Ukraine","Scandinavia","Great Britain","Western Europe","Southern Europe"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Southern Europe": {
-        "Neighbors": [],
+        "Neighbors": ["Ukraine","Northern Europe","Western Europe","North Africa","Egypt","Middle East"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Western Europe": {
-        "Neighbors": [],
+        "Neighbors": ["Southern Europe","Northern Europe","Great Britain","North Africa"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Great Britain": {
-        "Neighbors": [],
+        "Neighbors": ["Western Europe","Northern Europe","Scandinavia","Iceland"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Iceland": {
-        "Neighbors": [],
+        "Neighbors": ["Great Britain","Scandinavia","Greenland"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Greenland": {
-        "Neighbors": [],
+        "Neighbors": ["Iceland","North West Territory","Ontario","Quebec"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Quebec": {
-        "Neighbors": [],
+        "Neighbors": ["Greenland","Ontario","Eastern United States"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Eastern United States": {
-        "Neighbors": [],
+        "Neighbors": ["Quebec","Ontario","Western United States","Central America"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Ontario": {
-        "Neighbors": [],
+        "Neighbors": ["Quebec","Greenland","North West Territory","Alberta","Western United States","Eastern United States"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "North West Territory": {
-        "Neighbors": [],
+        "Neighbors": ["Alaska","Alberta","Ontario","Greenland"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Alberta": {
-        "Neighbors": [],
+        "Neighbors": ["Ontario","North West Territory","Alaska","Western United States"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Western United States": {
-        "Neighbors": [],
+        "Neighbors": ["Eastern United States","Ontario","Alberta","Central America"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
         "BottomRightY":0
     }, 
     "Central America": {
-        "Neighbors": [],
+        "Neighbors": ["Venezuela","Eastern United States","Western United States"],
         "TopLeftX":0,
         "TopLeftY":0,
         "BottomRightX":0,
