@@ -36,7 +36,7 @@ namespace risk.Controllers
         public IActionResult StartGame(int num_players)
         {
 
-            myGame.players = Player.createPlayers(num_players);
+            // myGame.players = Player.createPlayers(num_players);
             return Redirect("index");
         }
     }
