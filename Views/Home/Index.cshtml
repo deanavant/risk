@@ -15,11 +15,20 @@
 </form>
 
 <div style="border:2px solid black; position: relative; background-image: url(images/risk-original.jpg); width:1060px; height:700px;">
+@{
+    foreach( var element in ViewBag.game)
+    {
+    var top= ViewBag.game[element.Key].topLeftY +"px";
+    var left = ViewBag.game[element.Key].topLeftX  +"px";
+    var width = ViewBag.game[element.Key].bottomRightX - ViewBag.game[element.Key].topLeftX +"px";
+    var height = ViewBag.game[element.Key].bottomRightY - ViewBag.game[element.Key].topLeftY +"px";
 
-<form style="position: absolute; top: 85px; left: 25px;  ">
-    <label style=" position: absolute; left: 25px; color:red;">11</label>
-    <input type="submit" value="" style="width:3px; height:40px; color:red; border:1px solid black;">
+<form style="position: absolute; top: @top ; left: @left; ">
+    <label style=" position: absolute; left: @left; color:red;"></label>
+    <input type="submit" value="" style=" height: @height; color:red; border:1px solid black; width:@width;">
 </form>
+    }
+}
 
 
 </div>
