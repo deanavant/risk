@@ -40,12 +40,37 @@ namespace risk.Models
         public Game()
         {
             territories = LoadTerritoriesToDictionary();
+            setup_phase = true;
+            turn_phase = "Place";
             rand = new Random();
         }
 
         public void AddPlayer(string name, string color, int order)
         {
             players.Add(new Player(name,color,order));
+        }
+
+        public void InitialPlacements()
+        {
+            int p = players.Count;
+            int armies = 50;
+            if (p == 3)
+            {
+                armies = 35;
+            } else if (p == 4)
+            {
+                armies = 30;
+            } else if (p == 5)
+            {
+                armies = 25;
+            } else if (p == 6)
+            {
+                armies = 20;
+            }
+            foreach(Player a in players)
+            {
+                a.placement_units = armies;
+            }
         }
 
         private static Dictionary<string,Territory> LoadTerritoriesToDictionary() {
@@ -75,12 +100,12 @@ namespace risk.Models
                     }
 
                     foreach (var territory in jsonTerritories) {
-                        foreach(string name in territory.Value["Neighbors"]) {
-                            // Console.WriteLine((string)name);
-                            // tempList.Add(territories[(string)name]);
-                            territories[territory.Key].AddNeighbor(territories[name]);
+                        List<Territory> tempList = new List<Territory>();
+                        foreach(var name in territory.Value["Neighbors"]) {
+                            Console.WriteLine((string)name);
+                            tempList.Add(territories[(string)name]);
                         }
-                        // territories[territory.Key].neighbors = tempList;
+                        territories[territory.Key].neighbors = tempList;
                     }      
                 }
             return territories; 
