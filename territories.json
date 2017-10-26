@@ -255,7 +255,7 @@
     "Alaska": {
         "Neighbors": ["Kamchatka","North West Territory","Alberta"],
         "TopLeftX":28,
-        "TopLeftY":96,
+        "TopLeftY":85,
         "BottomRightX":89,
         "BottomRightY":117
     }, 
