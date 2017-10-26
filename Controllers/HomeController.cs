@@ -23,9 +23,7 @@ namespace risk.Controllers
         {
             Game myGame = new Game();
             ViewBag.game = myGame.territories;
-            Console.Write(myGame.territories["Peru"].name);
-            
-            Console.WriteLine(myGame.territories["Peru"].bottomRightX);
+
             return View("index");
         }
     }
