@@ -15,6 +15,9 @@ namespace risk.Controllers
         public HomeController (RiskContext context)
         {
             _context = context;
+            if (myGame == null) {
+                myGame = new Game();
+            }
         }
 
         // GET: /Home/
@@ -22,21 +25,18 @@ namespace risk.Controllers
         [Route("")]
         public IActionResult Index()
         {
-            if (myGame == null) {
-                myGame = new Game();
-            }
-
+             
             ViewBag.game = myGame.territories;
-
             return View("index");
+
         }
 
         [HttpPost]
-        [Route("start/{num_players}")]
-        public IActionResult StartGame(int num_players)
+        [Route("start")]
+        public IActionResult StartGame(int num_player)
         {
-            // myGame.players = Player.createPlayers(num_players);
-            return Redirect("index");
+            myGame.players = Player.createPlayers(num_player);
+            return Redirect("/");
         }
     }
 }
