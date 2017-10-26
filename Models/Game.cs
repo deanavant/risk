@@ -45,10 +45,6 @@ namespace risk.Models
         private static Dictionary<string,Territory> LoadTerritoriesToDictionary() {
             Dictionary<string,Territory> territories = new Dictionary<string,Territory>();
 
-                // JObject o1 = JObject.Parse(File.ReadAllText(@"c:\videogames.json"));
-
-                // // read JSON directly from a file
-
                 using (StreamReader file = File.OpenText(@"territories.json"))
                 using (JsonTextReader reader = new JsonTextReader(file))
                 {
@@ -69,9 +65,17 @@ namespace risk.Models
                         temp.bottomRightY = (int)territory.Value["BottomRightY"];
                         temp.neighbors = null;
                         temp.armies = 0;
-
                         territories[temp.name] = temp;
 
+                    }
+
+                    foreach (var territory in jsonTerritories) {
+                        List<Territory> tempList = new List<Territory>();
+                        foreach(var name in territory.Value["Neighbors"]) {
+                            Console.WriteLine((string)name);
+                            tempList.Add(territories[(string)name]);
+                        }
+                        territories[territory.Key].neighbors = tempList;
                     }
                     
                     
