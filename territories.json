@@ -1,5 +1,4 @@
 {
-
     "Eastern Austrialia": {
         "Neighbors": ["New Guinea", "Western Australia"],
         "TopLeftX": 960,
@@ -93,8 +92,7 @@
         "BottomRightX": 827,
         "BottomRightY": 127
     },
-    "Ural": {
-        "Neighbors": ["Siberia","China","Afghanistan","Ukraine"],
+    "Ural" :{
         "TopLeftX": 703,
         "TopLeftY": 148,
         "BottomRightX": 761,
