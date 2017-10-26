@@ -30,7 +30,7 @@ namespace risk.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime updated_at { get; set; }
 
-        public Player(string name, string color, int order, int units)
+        public Player(string name, string color, int order, int units = 0)
         {
             this.name = name;
             this.color = color;

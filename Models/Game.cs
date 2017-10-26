@@ -42,6 +42,11 @@ namespace risk.Models
             rand = new Random();
         }
 
+        public void AddPlayer(string name, string color, int order)
+        {
+            players.Add(new Player(name,color,order));
+        }
+
         private static Dictionary<string,Territory> LoadTerritoriesToDictionary() {
             Dictionary<string,Territory> territories = new Dictionary<string,Territory>();
 

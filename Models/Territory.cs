@@ -70,6 +70,10 @@ namespace risk.Models
         {
             if(armies != 0)
             {
+                if(this.armies == 0)
+                {
+                    owner = player;
+                }
                 this.armies = armies;
                 return true;
             }
