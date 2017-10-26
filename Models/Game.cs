@@ -66,21 +66,17 @@ namespace risk.Models
                         temp.neighbors = null;
                         temp.armies = 0;
                         territories[temp.name] = temp;
-
                     }
 
                     foreach (var territory in jsonTerritories) {
-                        List<Territory> tempList = new List<Territory>();
-                        foreach(var name in territory.Value["Neighbors"]) {
-                            Console.WriteLine((string)name);
-                            tempList.Add(territories[(string)name]);
+                        foreach(string name in territory.Value["Neighbors"]) {
+                            // Console.WriteLine((string)name);
+                            // tempList.Add(territories[(string)name]);
+                            territories[territory.Key].AddNeighbor(territories[name]);
                         }
-                        territories[territory.Key].neighbors = tempList;
-                    }
-                    
-                    
+                        // territories[territory.Key].neighbors = tempList;
+                    }      
                 }
-
             return territories; 
         }
 
