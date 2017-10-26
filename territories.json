@@ -14,6 +14,15 @@
         "BottomRightX": 980,
         "BottomRightY": 654
     },
+
+    "New Guinea": {
+        "Neighbors": ["Eastern Australia", "Indonesia"],
+        "TopLeftX": 944,
+        "TopLeftY": 480,
+        "BottomRightX": 1007,
+        "BottomRightY": 515
+    },
+
     "Indonesia": {
         "Neighbors": ["New Guinea", "Western Australia", "Siam"],
         "TopLeftX": 823,
@@ -84,11 +93,61 @@
         "BottomRightX": 827,
         "BottomRightY": 127
     },
-    "Siberia": {
-        "Neighbors": ["Mongolia","Irkutsk","Yakutsk","China","Ural"],
-        "TopLeftX": 750,
-        "TopLeftY": 87,
-        "BottomRightX": 827,
+    "Ural": {
+        "Neighbors": ["Siberia","China","Afghanistan","Ukraine"],
+        "TopLeftX": 703,
+        "TopLeftY": 148,
+        "BottomRightX": 761,
+        "BottomRightY": 184
+    },
+    "Afghanistan": {
+        "Neighbors": ["Ural","China","India","Middle East","Ukraine"],
+        "TopLeftX": 676,
+        "TopLeftY": 233,
+        "BottomRightX": 755,
         "BottomRightY": 127
-    }  
+    },
+    "Middle East": {
+        "Neighbors": ["India","Afghanistan","Ukraine","Southern Europe","Egypt","East Africa"],
+        "TopLeftX": 615,
+        "TopLeftY": 333,
+        "BottomRightX": 713,
+        "BottomRightY": 373
+    },
+    "Egypt": {
+        "Neighbors": ["Middle East","East Africa","North Africa","Southern Europe"],
+        "TopLeftX": 535,
+        "TopLeftY": 404,
+        "BottomRightX": 598,
+        "BottomRightY": 429
+    },
+    "East Africa": {
+        "Neighbors": ["Middle East","Egypt","North Africa","Congo","South Africa","Madagascar"],
+        "TopLeftX": 584,
+        "TopLeftY": 471,
+        "BottomRightX": 660,
+        "BottomRightY": 523
+    },
+    "South Africa": {
+        "Neighbors": ["Congo","East Africa","Madagascar"],
+        "TopLeftX": 536,
+        "TopLeftY": 603,
+        "BottomRightX": 606,
+        "BottomRightY": 652
+    },
+    "Congo": {
+        "Neighbors": ["South Africa","East Africa","North Africa"],
+        "TopLeftX": 536,
+        "TopLeftY": 531,
+        "BottomRightX": 595,
+        "BottomRightY": 569
+    },
+    "North Africa": {
+        "Neighbors": ["Egypt","East Africa","Congo","Brazil","Western Europe","Southern Europe"],
+        "TopLeftX": 427,
+        "TopLeftY": 421,
+        "BottomRightX": 551,
+        "BottomRightY": 482
+    },
+
 }
