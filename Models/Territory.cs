@@ -69,5 +69,17 @@ namespace risk.Models
             }
             return false;
         }
+
+        public bool Claim(Player player)
+        {
+            if(this.owner.name == "Player7"
+                && player.placement_units > 0)
+            {
+                this.owner = player;
+                player.placement_units--;
+                return true;
+            }
+            return false;
+        }
     }
 }
