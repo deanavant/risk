@@ -39,6 +39,8 @@ namespace risk.Models
         public Game()
         {
             territories = LoadTerritoriesToDictionary();
+            setup_phase = true;
+            turn_phase = "Place";
             rand = new Random();
         }
 
