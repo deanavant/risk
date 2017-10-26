@@ -2,6 +2,9 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 using System;
+using Newtonsoft.Json.Linq;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace risk.Models
 {
@@ -22,7 +25,7 @@ namespace risk.Models
         public Player current_turn_player { get; set; }
 
         [NotMapped]
-        public List<Territory> territories { get; set; }
+        public Dictionary<string,Territory> territories { get; set; }
         
         [NotMapped]
         public List<Player> players { get; set; }
@@ -35,8 +38,46 @@ namespace risk.Models
 
         public Game()
         {
-            territories = new List<Territory>();
+            territories = LoadTerritoriesToDictionary();
             rand = new Random();
+        }
+
+        private static Dictionary<string,Territory> LoadTerritoriesToDictionary() {
+            Dictionary<string,Territory> territories = new Dictionary<string,Territory>();
+
+                // JObject o1 = JObject.Parse(File.ReadAllText(@"c:\videogames.json"));
+
+                // // read JSON directly from a file
+
+                using (StreamReader file = File.OpenText(@"territories.json"))
+                using (JsonTextReader reader = new JsonTextReader(file))
+                {
+                    JObject jsonTerritories = (JObject)JToken.ReadFrom(reader);
+                    
+                    foreach (var territory in jsonTerritories) {
+                        // Console.WriteLine(territory.Key);
+                        // Console.WriteLine(territory.Value["Neighbors"]);
+                        // Console.WriteLine(territory.Value["TopLeftX"]);
+                        // break;
+                        
+                        Territory temp = new Territory();
+                        temp.name = territory.Key;
+                        temp.owner = null;
+                        temp.topLeftX = (int)territory.Value["TopLeftX"];
+                        temp.topLeftY = (int)territory.Value["TopLeftY"];
+                        temp.bottomRightX = (int)territory.Value["BottomRightX"];
+                        temp.bottomRightY = (int)territory.Value["BottomRightY"];
+                        temp.neighbors = null;
+                        temp.armies = 0;
+
+                        territories[temp.name] = temp;
+
+                    }
+                    
+                    
+                }
+
+            return territories; 
         }
 
         public static int DieRoll(int sides = 6)
