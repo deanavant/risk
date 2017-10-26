@@ -2,8 +2,19 @@
     ViewData["Title"] = "Risk Game";
 }
 
-<div style="border:2px solid black; position: relative; background-image: url(images/risk-original.jpg); width:1060px; height:700px;">
+<div style="border:2px solid black; background:#edc589; width:1060px; padding:20px;">
+<form style="margin-left:50px;">
+       <span style="font-weight:bold">Number of Players (2-6): </span> 
+    <select>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+    </select> <input type="submit" value="Play" style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
+</form>
 
+<div style="border:2px solid black; position: relative; background-image: url(images/risk-original.jpg); width:1060px; height:700px;">
 
 <form style="position: absolute; top: 85px; left: 25px;  ">
     <label style=" position: absolute; left: 25px; color:red;">11</label>
@@ -11,4 +22,5 @@
 </form>
 
 
+</div>
 </div>
