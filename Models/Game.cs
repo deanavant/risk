@@ -124,11 +124,30 @@ namespace risk.Models
         public bool AttackTerritory(Territory attacker, Territory foe, int dice = 2)
         {
             // attacker and foe are territories
-            if (attacker.IsNeighbor(foe) && attacker.IsFoe(foe) && attacker.armies > 1)
+            if (attacker.IsNeighbor(foe) 
+                && attacker.IsFoe(foe) 
+                && attacker.armies > 1
+                && foe.armies > 0)
             {
                 // do the attack here
+                int[] atk = new int[dice];
+                for(int i = 0;i < dice;i++)
+                {
+                    atk[i] = DieRoll();
+                }
+                Array.Sort(atk);
+                Array.Reverse(atk);
+                int d = foe.armies >= 2 ? 2 : 1;
+                int[] def = new int[d];
+                for(int i = 0;i < d;i++)
+                {
+                    def[i] = DieRoll();
+                }
+                Array.Sort(def);
+                Array.Reverse(def);
                 return true;
             }
+            
             // foe must be a neighbor of attacker
             // attacker must belong to current player
             // attacker army count must be >= 2
