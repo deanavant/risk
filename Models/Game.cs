@@ -42,7 +42,7 @@ namespace risk.Models
 
         public Game()
         {
-            emptyPlayer = new Player("Player7","white",7,0);
+            emptyPlayer = new Player("Player7","white",7,9);
             territories = LoadTerritoriesToDictionary();
             setup_phase = true;
             turn_phase = "Place";
@@ -72,7 +72,6 @@ namespace risk.Models
                         temp.bottomRightX = (int)territory.Value["BottomRightX"];
                         temp.bottomRightY = (int)territory.Value["BottomRightY"];
                         temp.neighbors = null;
-                        temp.armies = 0;
                         territories[temp.name] = temp;
                     }
 
@@ -163,7 +162,24 @@ namespace risk.Models
         }
 
         public bool ClaimTerritory(string t_name){
-            return territories[t_name].Claim(current_turn_player);
+            if (territories[t_name].Claim(current_turn_player) )
+            {
+                // AdvancePlayer();
+                return true;
+            }
+            return false;
+        }
+
+        public void AdvancePlayer()
+        {
+            Console.WriteLine($"***** players.count: {players.Count}");
+            int i = current_turn_player.order_number + 1;
+            if (i >= players.Count)
+            {
+                i = 0;
+            }
+            Console.WriteLine($"****  player index is {i}");
+            current_turn_player = players[i];
         }
     }
 }

@@ -76,6 +76,7 @@ namespace risk.Models
                 && player.placement_units > 0)
             {
                 this.owner = player;
+                this.armies = 1;
                 player.placement_units--;
                 return true;
             }

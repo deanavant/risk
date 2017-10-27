@@ -58,9 +58,9 @@ namespace risk.Models
                 unit = 20;
             }
 
-            for(int i=1;i<=num_players;i++)
+            for(int i=0;i < num_players;i++)
             {
-                var name = "Player"+i;
+                var name = $"Player{i+1}";
                 var color = arr[i];
                 var order = i;
                 player = new Player(name,color,order,unit);
