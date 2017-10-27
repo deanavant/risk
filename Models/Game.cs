@@ -176,5 +176,18 @@ namespace risk.Models
 
             return false;
         }
+
+        public bool AllClaimed()
+        {
+            int claim = 0;
+            foreach(KeyValuePair<string,Territory> t in territories)
+            {
+                if(t.Value.name == "Player7")
+                {
+                    claim++;
+                }
+            }
+            return claim == 0;
+        }
     }
 }
