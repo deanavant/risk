@@ -137,6 +137,7 @@ namespace risk.Models
                     foe.owner = attacker.owner;
                     foe.armies = attacker.armies - 1;
                     attacker.armies = 1;
+                    this.current_turn_player.selectedTerritory = foe;
                 }
                 return true;
             }
