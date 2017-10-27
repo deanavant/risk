@@ -63,7 +63,17 @@ namespace risk.Controllers
                 myGame.Reinforce(t_name);
             }
             else if (myGame.turn_phase == "attack") {
-                //JOHN
+                if (myGame.territories[t_name].owner == myGame.current_turn_player) {
+                    if (myGame.current_turn_player.selectedTerritory == null) {
+                        myGame.current_turn_player.selectedTerritory = myGame.territories[t_name];
+                    } else {
+                        if (myGame.current_turn_player.selectedTerritory == myGame.territories[t_name]) {
+                            myGame.current_turn_player.selectedTerritory = null;
+                        } else {
+                            myGame.AttackTerritory(myGame.current_turn_player.selectedTerritory, myGame.territories[t_name]);
+                        }
+                    }
+                }
             }
             else if (myGame.turn_phase == "move") {
                 //RITU
