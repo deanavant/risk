@@ -26,11 +26,9 @@ namespace risk.Controllers
         [Route("")]
         public IActionResult Index()
         {
-
             ViewBag.game = myGame.territories;
             ViewBag.game_started = game_started;
             return View("index");
-
         }
 
         [HttpPost]
@@ -49,6 +47,11 @@ namespace risk.Controllers
         [Route("click/{t_name}")]
         public IActionResult clickTerritory(string t_name)
         {
+            if(game_started == false)
+            {
+                TempData["Error"] = "Please select the number of Players and Start the Game !!!";
+                return Redirect("/");
+            }   
             myGame.ClaimTerritory(t_name);
             return Redirect("/");
         }
