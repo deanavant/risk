@@ -27,6 +27,7 @@ namespace risk.Controllers
         public IActionResult Index()
         {
             ViewBag.game = myGame.territories;
+            ViewBag.gameObject = myGame;
             ViewBag.game_started = game_started;
             return View("index");
         }
@@ -81,7 +82,19 @@ namespace risk.Controllers
                 }
             }
             else if (myGame.turn_phase == "move") {
-                //RITU
+                //if you own the territory you clicked on
+                if (myGame.territories[t_name].owner == myGame.current_turn_player) {
+                    if (myGame.current_turn_player.selectedTerritory == myGame.territories[t_name]) {
+                        myGame.current_turn_player.selectedTerritory = null;
+                    } else {
+                        if (myGame.current_turn_player.selectedTerritory == null && myGame.territories[t_name].armies >= 2){
+                            myGame.current_turn_player.selectedTerritory = myGame.territories[t_name];
+                        } else {
+                            myGame.MoveUnits(myGame.current_turn_player.selectedTerritory, myGame.territories[t_name]);
+                            EndMove();
+                        }
+                    }
+                } 
             }
 
             return Redirect("/");
@@ -89,5 +102,27 @@ namespace risk.Controllers
 
 
         }
+
+        [HttpPost]
+        [Route("stop_attack")]
+        public IActionResult StopAttack()
+        {
+            myGame.turn_phase = "move";
+            myGame.current_turn_player.selectedTerritory = null;
+            return Redirect("/");
+
+        }   
+
+        [HttpPost]
+        [Route("end_move")]
+        public IActionResult EndMove()
+        {
+            myGame.turn_phase = "rein";
+            myGame.current_turn_player.selectedTerritory = null;
+            myGame.AdvancePlayer();
+            myGame.current_turn_player.placement_units += myGame.CalcRein();
+            return Redirect("/");
+
+        }       
     }
 }

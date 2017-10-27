@@ -120,7 +120,7 @@ namespace risk.Models
                 Array.Reverse(def);
                 int aloss = 0;
                 int dloss = 0;
-                for (int i = 0;i < def.Length;i++)
+                for (int i = 0;i < Math.Min(def.Length, atk.Length) ;i++)
                 {
                     if(atk[i] > def[i])
                     {
@@ -134,8 +134,9 @@ namespace risk.Models
                 foe.armies -= dloss;
                 if (foe.armies == 0 && attacker.armies >= 2)
                 {
-                    attacker.armies--;
                     foe.owner = attacker.owner;
+                    foe.armies = attacker.armies - 1;
+                    attacker.armies = 1;
                 }
                 return true;
             }
@@ -147,6 +148,12 @@ namespace risk.Models
             // defender uses 2 dice unless they have 1 army
 
             return false;
+        }
+
+        public void MoveUnits(Territory origin, Territory destination)
+        {
+            destination.armies += origin.armies -1;
+            origin.armies = 1;
         }
 
         public bool AllClaimed()

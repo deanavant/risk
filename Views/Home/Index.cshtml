@@ -26,6 +26,25 @@
     }
     else 
     {
+        if (ViewBag.gameObject.turn_phase == "attack") {
+            <form action="stop_attack" method="POST">
+                <input type="submit" value="End Attack Phase" style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
+            </form>
+        }
+
+        if (ViewBag.gameObject.turn_phase == "move") {
+            <form action="end_move" method="POST">
+                <input type="submit" value="End Move Phase" style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
+            </form>
+        }
+
+        if (ViewBag.gameObject.current_turn_player.selectedTerritory != null) {
+            <p>Selected Territory: @ViewBag.gameObject.current_turn_player.selectedTerritory.name</p>
+        } else {
+            <p>Selected Territory: null </p>
+        }
+        
+
         
     }
 }
