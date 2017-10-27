@@ -101,7 +101,8 @@ namespace risk.Models
                 && foe.armies > 0)
             {
                 // do the attack here
-                int dice = attacker.armies > 2 ? 3 : 2;
+                
+                int dice = attacker.armies >= 4 ? 3 : attacker.armies - 1;
                 int[] atk = new int[dice];
                 for(int i = 0;i < dice;i++)
                 {
