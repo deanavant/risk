@@ -58,13 +58,15 @@ namespace risk.Models
 
         public bool AddArmies(Player player, int armies = 1)
         {
-            if(armies != 0)
+            if(armies != 0 && this.owner == player)
             {
                 if(this.armies == 0)
                 {
                     owner = player;
                 }
-                this.armies = armies;
+                this.armies += armies;
+                player.placement_units -= armies;
+                Console.WriteLine($"***** units remaining:{player.placement_units}");
                 return true;
             }
             return false;
