@@ -15,14 +15,10 @@ namespace risk.Controllers
 
         public HomeController (RiskContext context)
         {
-            Console.WriteLine("New Home Controller!!!!");
-            
             _context = context;
             if (myGame == null) {
                 myGame = new Game();
-                Console.WriteLine("new game made by new home controller");
             }
-            // game_started = false;
         }
 
         // GET: /Home/
@@ -33,7 +29,6 @@ namespace risk.Controllers
 
             ViewBag.game = myGame.territories;
             ViewBag.game_started = game_started;
-            Console.WriteLine("In Index");
             return View("index");
 
         }
@@ -42,10 +37,19 @@ namespace risk.Controllers
         [Route("start")]
         public IActionResult StartGame(int num_player)
         {
-            Console.WriteLine("In StartGame");
             game_started = true;
             ViewBag.game_started = game_started;
             myGame.players = Player.createPlayers(num_player);
+            myGame.current_turn_player = myGame.players[0];
+            return Redirect("/");
+        }
+
+
+        [HttpPost]
+        [Route("click/{t_name}")]
+        public IActionResult clickTerritory(string t_name)
+        {
+            myGame.ClaimTerritory(t_name);
             return Redirect("/");
         }
     }
