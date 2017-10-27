@@ -95,7 +95,10 @@
     var color = ViewBag.game[element.Key].owner.color;
     var ltop = ViewBag.game[element.Key].topLeftY - 30 +"px";
 
+@if(@ViewBag.game[element.Key].armies != 0)
+{
 <label style=" position: absolute; top: @ltop ; left: @left; margin-left:30px;  font-weight:bold; font-size:25px; color:@color;"> @ViewBag.game[element.Key].armies</label>
+  }
     <form action="click/@element.Key" method="POST" style="position: absolute; top: @top ; left: @left; ">
        <!-- <label style=" position: absolute; margin-left:30px;  font-weight:bold; font-size:25px; color:@color;"> @ViewBag.game[element.Key].armies</label> -->
         <input type="submit" value="" style=" height: @height; color:@color; border:2px solid @color; width:@width;">
