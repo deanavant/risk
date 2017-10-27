@@ -53,15 +53,14 @@ namespace risk.Controllers
                 return Redirect("/");
             }   
             
-            
             if (myGame.turn_phase == "claim") {
                 myGame.ClaimTerritory(t_name);
             }
             else if (myGame.turn_phase == "init_rein") {
-                //DEAN
+                myGame.Reinforce(t_name);
             }
             else if (myGame.turn_phase == "rein") {
-                //DEAN
+                myGame.Reinforce(t_name);
             }
             else if (myGame.turn_phase == "attack") {
                 //JOHN
@@ -70,8 +69,6 @@ namespace risk.Controllers
                 //RITU
             }
 
-            
-            
             return Redirect("/");
 
 

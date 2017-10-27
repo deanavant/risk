@@ -45,7 +45,7 @@ namespace risk.Models
             emptyPlayer = new Player("Player7","white",7,9);
             territories = LoadTerritoriesToDictionary();
             setup_phase = true;
-            turn_phase = "Place";
+            turn_phase = "claim";
             rand = new Random();
 
         }
@@ -153,7 +153,7 @@ namespace risk.Models
             int claim = 0;
             foreach(KeyValuePair<string,Territory> t in territories)
             {
-                if(t.Value.name == "Player7")
+                if(t.Value.owner.name == "Player7")
                 {
                     claim++;
                 }
@@ -161,12 +161,48 @@ namespace risk.Models
             return claim == 0;
         }
 
+        public bool Reinforce(string t_name)
+        {
+            if(territories[t_name].AddArmies(current_turn_player) )
+            {
+                if (current_turn_player.placement_units == 0)
+                {
+                    if(turn_phase == "init_rein")
+                    {
+                        AdvancePlayer();
+                        if(current_turn_player == players[0])
+                        {
+                            current_turn_player.placement_units = CalcRein();
+                            Console.WriteLine("****** rein phase now");
+                            turn_phase = "rein";
+                        }
+                    } else
+                    {
+                        turn_phase = "attack";
+                        Console.WriteLine("****** attack phase now");
+                    }
+                }
+                return true;
+            }
+            return false;
+        }
+
         public bool ClaimTerritory(string t_name){
             if (territories[t_name].Claim(current_turn_player) )
             {
-                AdvancePlayer();
+                if (AllClaimed() )
+                {
+                    turn_phase = "init_rein";
+                    current_turn_player = players[0];
+                    Console.WriteLine("***** all territories claimed");
+                } else
+                {
+                    AdvancePlayer();
+                    Console.WriteLine("***** advancing to next player");
+                }
                 return true;
             }
+            Console.WriteLine("******* did not claim territory");
             return false;
         }
 
@@ -178,6 +214,21 @@ namespace risk.Models
                 i = 0;
             }
             current_turn_player = players[i];
+        }
+
+        public int CalcRein()
+        {
+            int result = 0;
+            foreach(KeyValuePair<string,Territory> t in territories)
+            {
+                if(t.Value.owner.name == current_turn_player.name)
+                {
+                    result++;
+                }
+            }
+            int subtotal = result/3;
+            result = subtotal < 3 ? 3 : subtotal;
+            return result;
         }
     }
 }
