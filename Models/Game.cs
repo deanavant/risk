@@ -161,5 +161,9 @@ namespace risk.Models
             }
             return claim == 0;
         }
+
+        public bool ClaimTerritory(string t_name){
+            return territories[t_name].Claim(current_turn_player);
+        }
     }
 }
