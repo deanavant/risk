@@ -169,26 +169,36 @@ namespace risk.Models
             return claim == 0;
         }
 
+        public bool InitRein(string t_name)
+        {   
+            if(current_turn_player.placement_units == 0)
+            {
+                AdvancePlayer();
+                return true;
+            } else if(territories[t_name].AddArmies(current_turn_player) )
+            {
+                if(RemainingDepUnits() == 0)
+                {
+                    current_turn_player = players[0];
+                    current_turn_player.placement_units = CalcRein();
+                    Console.WriteLine("****** rein phase now");
+                    turn_phase = "rein";
+                    return true;
+                }
+                AdvancePlayer();
+                return true;
+            }
+            return false;
+        }
+
         public bool Reinforce(string t_name)
         {
             if(territories[t_name].AddArmies(current_turn_player) )
             {
                 if (current_turn_player.placement_units == 0)
                 {
-                    if(turn_phase == "init_rein")
-                    {
-                        AdvancePlayer();
-                        if(current_turn_player == players[0])
-                        {
-                            current_turn_player.placement_units = CalcRein();
-                            Console.WriteLine("****** rein phase now");
-                            turn_phase = "rein";
-                        }
-                    } else
-                    {
-                        turn_phase = "attack";
-                        Console.WriteLine("****** attack phase now");
-                    }
+                    turn_phase = "attack";
+                    Console.WriteLine("****** attack phase now");
                 }
                 return true;
             }
@@ -237,6 +247,16 @@ namespace risk.Models
             int subtotal = result/3;
             result = subtotal < 3 ? 3 : subtotal;
             return result;
+        }
+
+        public int RemainingDepUnits()
+        {
+            int count = 0;
+            foreach(var p in players)
+            {
+                count += p.placement_units;
+            }
+            return count;
         }
     }
 }
