@@ -107,7 +107,7 @@ namespace risk.Models
                     foreach (var territory in jsonTerritories) {
                         List<Territory> tempList = new List<Territory>();
                         foreach(var name in territory.Value["Neighbors"]) {
-                            Console.WriteLine((string)name);
+                            // Console.WriteLine((string)name);
                             tempList.Add(territories[(string)name]);
                         }
                         territories[territory.Key].neighbors = tempList;

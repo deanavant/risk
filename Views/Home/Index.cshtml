@@ -3,16 +3,23 @@
 }
 
 <div style="border:2px solid black; background:#edc589; width:1060px; padding:20px;">
-<form style="margin-left:50px;">
-       <span style="font-weight:bold">Number of Players (2-6): </span> 
-    <select name="players">
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-    </select> <input type="submit" value="Play"style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
-</form>
+
+@{
+    if (ViewBag.game_started != true)
+    {
+
+        <form action="start" method="POST" style="margin-left:50px;">
+            <span style="font-weight:bold">Number of Players (2-6): </span> 
+            <select name="players">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select> <input type="submit" value="Start" style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
+        </form>
+    }
+}
 
 <div style="border:2px solid black; position: relative; background-image: url(images/risk-original.jpg); width:1060px; height:700px;">
 @{
