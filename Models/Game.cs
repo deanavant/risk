@@ -45,7 +45,7 @@ namespace risk.Models
             emptyPlayer = new Player("Player7","white",7,9);
             territories = LoadTerritoriesToDictionary();
             setup_phase = true;
-            turn_phase = "Place";
+            turn_phase = "claim";
             rand = new Random();
 
         }

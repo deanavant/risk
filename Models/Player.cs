@@ -24,6 +24,9 @@ namespace risk.Models
         [Required]
         public int placement_units { get; set; }
 
+        [NotMapped]
+        public Territory selectedTerritory { get; set; }
+
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         public DateTime created_at { get; set; }
         
