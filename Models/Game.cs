@@ -164,7 +164,7 @@ namespace risk.Models
         public bool ClaimTerritory(string t_name){
             if (territories[t_name].Claim(current_turn_player) )
             {
-                // AdvancePlayer();
+                AdvancePlayer();
                 return true;
             }
             return false;
@@ -172,13 +172,17 @@ namespace risk.Models
 
         public void AdvancePlayer()
         {
-            Console.WriteLine($"***** players.count: {players.Count}");
+            // Console.WriteLine($"***** players.count: {players.Count}");
+            for(int a = 0;a < players.Count;a++)
+            {
+                // Console.WriteLine($"***********Player{a} is {players[a].name}");
+            }
             int i = current_turn_player.order_number + 1;
             if (i >= players.Count)
             {
                 i = 0;
             }
-            Console.WriteLine($"****  player index is {i}");
+            // Console.WriteLine($"****  player index is {i}");
             current_turn_player = players[i];
         }
     }
