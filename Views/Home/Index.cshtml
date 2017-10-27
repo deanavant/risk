@@ -26,12 +26,61 @@
     }
     else 
     {
-         var c_color = ViewBag.gameobject.current_turn_player.color;
+
+
+
+        var c_color = ViewBag.gameobject.current_turn_player.color;
         <p style="color: @c_color; font-weight:bold; font-size:20px; ">Current Player is: @ViewBag.gameobject.current_turn_player.name </p>
-        @if(@ViewBag.gameobject.current_turn_player.placement_units != 0)
-        {
-        <p > Current Placement_Units : @ViewBag.gameobject.current_turn_player.placement_units</p>
+        
+
+        var phase = "";
+        if (ViewBag.gameobject.turn_phase == "attack") {
+            phase = "Attack";
         }
+        else if (ViewBag.gameobject.turn_phase == "claim") {
+            phase = "Claim Territories";
+        }
+        else if (ViewBag.gameobject.turn_phase == "init_rein") {
+            phase = "Reinforce Your Territories";
+        }
+        else if (ViewBag.gameobject.turn_phase == "rein") {
+            phase = "Reinforce Your Territories";
+        }
+        else if (ViewBag.gameobject.turn_phase == "move") {
+            phase = "Move Units Within Your Territories";
+        }
+
+        <p> Turn Phase : @phase </p>
+        
+        
+        @if(@ViewBag.gameobject.current_turn_player.placement_units != 0 && @ViewBag.gameobject.turn_phase !="init_rein")
+        {
+        <p > Number of Units to Place : @ViewBag.gameobject.current_turn_player.placement_units</p>
+        }
+
+
+
+                           
+
+        if (ViewBag.gameobject.turn_phase == "attack") {
+            <form action="stop_attack" method="POST">
+                <input type="submit" value="End Attack Phase" style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
+            </form>
+        }
+
+        if (ViewBag.gameobject.turn_phase == "move") {
+            <form action="end_move" method="POST">
+                <input type="submit" value="End Move Phase" style="margin-left:30px; background:rgb(216, 172, 118) ; color:black;">
+            </form>
+        }
+
+        if (ViewBag.gameobject.current_turn_player.selectedTerritory != null) {
+            <p>Selected Territory: @ViewBag.gameobject.current_turn_player.selectedTerritory.name</p>
+        } else {
+            <p>Selected Territory: None </p>
+        }
+
+
     }
 }
 

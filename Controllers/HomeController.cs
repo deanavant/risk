@@ -27,7 +27,7 @@ namespace risk.Controllers
         public IActionResult Index()
         {
             ViewBag.game = myGame.territories;
-            ViewBag.gameObject = myGame;
+            ViewBag.gameobject = myGame;
             ViewBag.game_started = game_started;
             return View("index");
         }
