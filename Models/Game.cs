@@ -171,11 +171,7 @@ namespace risk.Models
 
         public bool InitRein(string t_name)
         {   
-            if(current_turn_player.placement_units == 0)
-            {
-                AdvancePlayer();
-                return true;
-            } else if(territories[t_name].AddArmies(current_turn_player) )
+            if(territories[t_name].AddArmies(current_turn_player) )
             {
                 if(RemainingDepUnits() == 0)
                 {
@@ -186,7 +182,11 @@ namespace risk.Models
                     return true;
                 }
                 AdvancePlayer();
-                return true;
+                while(current_turn_player.placement_units == 0)
+                {
+                    AdvancePlayer();
+                }
+                return true; 
             }
             return false;
         }
