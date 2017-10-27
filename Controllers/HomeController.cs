@@ -52,8 +52,30 @@ namespace risk.Controllers
                 TempData["Error"] = "Please select the number of Players and Start the Game !!!";
                 return Redirect("/");
             }   
-            myGame.ClaimTerritory(t_name);
+            
+            
+            if (myGame.turn_phase == "claim") {
+                myGame.ClaimTerritory(t_name);
+            }
+            else if (myGame.turn_phase == "init_rein") {
+                //DEAN
+            }
+            else if (myGame.turn_phase == "rein") {
+                //DEAN
+            }
+            else if (myGame.turn_phase == "attack") {
+                //JOHN
+            }
+            else if (myGame.turn_phase == "move") {
+                //RITU
+            }
+
+            
+            
             return Redirect("/");
+
+
+
         }
     }
 }
