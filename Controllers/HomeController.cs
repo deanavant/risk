@@ -57,7 +57,7 @@ namespace risk.Controllers
                 myGame.ClaimTerritory(t_name);
             }
             else if (myGame.turn_phase == "init_rein") {
-                myGame.Reinforce(t_name);
+                myGame.InitRein(t_name);
             }
             else if (myGame.turn_phase == "rein") {
                 myGame.Reinforce(t_name);
